@@ -1,0 +1,64 @@
+:root {
+    --shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.page {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 1cm 2cm;
+    background-color: white;
+    margin: 2cm auto;
+    box-shadow: var(--shadow);
+    outline: 0;
+    font-family: 'Calibri';
+}
+
+.header {
+    text-align: center;
+}
+
+.section {
+    margin-block: 1em;
+}
+
+.heading {
+    --left-line-width: 0px;
+    --line-height: 1px;
+    --line-top: calc(100% - 10px);
+
+    position: relative;
+    width: fit-content;
+    padding-left: var(--left-line-width);
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    top: var(--line-top);
+    right: calc(100% - var(--left-line-width));
+    height: var(--line-height);
+    width: var(--left-line-width);
+    background-color: grey;
+} 
+
+.heading::after {
+    content: '';
+    position: absolute;
+    top: var(--line-top);
+    left: 100%;
+    height: var(--line-height);
+    width: calc(17cm - 100%);
+    background-color: grey;
+}   
+
+.textarea {
+    width: 100%;
+    height: max-content;
+    border: none;
+    overflow: hidden;
+    resize: vertical;
+}
